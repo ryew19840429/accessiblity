@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:ui\" \"npm run dev:agent\" --names ui,agent --prefix-colors blue,green --kill-others",
     "dev:debug": "LOG_LEVEL=debug npm run dev",
-    "dev:agent": "bash scripts/run-agent.sh",
+    "dev:agent": "nodemon --watch agent/ --ext py --exec \"bash scripts/run-agent.sh\"",
     "dev:ui": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -33,6 +33,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "nodemon": "^3.1.4"
   }
 }
